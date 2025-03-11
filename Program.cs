@@ -32,12 +32,15 @@ class Program
                 Console.WriteLine("Please enter the name of the task to add to the list.");
                 string addList = Console.ReadLine();
                 Tasks.Add(addList);
-                Console.ReadLine(); //Readability
-                /*if () {
-                    Console.WriteLine("Task added to the list.");
-                }*/
-                //could do a try catch here
-                // if addtolist succeed, writeline "Task added to the list."
+                if (Tasks.Contains(addList))
+                {
+                    Console.WriteLine("Task successfully added to the list.");
+                }
+                else
+                {
+                    Console.WriteLine("Something went wrong.");
+                }
+                Console.WriteLine(); //Readability
                 break;
 
                 case 2:
@@ -45,7 +48,7 @@ class Program
                 string removeTask = Console.ReadLine();
                 Tasks.Remove(removeTask);
                 Console.WriteLine("Task removed from the list.");
-                Console.ReadLine(); //Readability
+                Console.WriteLine(); //Readability
                 break;
 
                 case 3:
@@ -54,7 +57,7 @@ class Program
                 {
                     Console.WriteLine(tasks); //tasks, not Tasks = tasks is each string, Tasks is the whole list (cannot be printed out this way)
                 }
-                Console.ReadLine(); //Readability
+                Console.WriteLine(); //Readability
                 break;
 
                 default:
